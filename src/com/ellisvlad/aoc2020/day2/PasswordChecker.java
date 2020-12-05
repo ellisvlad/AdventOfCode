@@ -38,5 +38,13 @@ public class PasswordChecker {
 		
 		return false;
 	}
+	
+	public boolean validateV2() {
+		int occurences = 0;
+		if (password.charAt(idxStart - 1) == character) occurences++;
+		if (password.charAt(idxEnd - 1) == character) occurences++;
+		
+		return occurences == 1;
+	}
 
 }

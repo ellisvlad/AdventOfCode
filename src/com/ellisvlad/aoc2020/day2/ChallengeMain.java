@@ -10,6 +10,7 @@ public class ChallengeMain extends DayChallenge {
 	@Override
 	public void runChallenge(BufferedReader input) throws Exception {
 		int validPasswords = 0;
+		int validPasswordsV2 = 0;
 
 		String line;
 		while ((line = input.readLine()) != null) {
@@ -19,10 +20,11 @@ public class ChallengeMain extends DayChallenge {
 			}
 
 			if (checker.get().validate()) validPasswords++;
+			if (checker.get().validateV2()) validPasswordsV2++;
 		}
 
 		printPartOutput(1, String.valueOf(validPasswords));
-		printPartOutput(2, "-");
+		printPartOutput(2, String.valueOf(validPasswordsV2));
 	}
 
 	@Override
